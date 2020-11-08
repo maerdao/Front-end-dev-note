@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shopping List</title>
+
+</head>
+<body>
+    <h1>What to buy</h1>
+    <p title="a gentle reminder">Don't forget to buy this stuff.</p>
+    <ul id="purchases">
+        <li>A tin of beans</li>
+        <li class="sale">Chess</li>
+        <li class="sale important">Milk</li>
+    </ul>
+</body>
+
+<script>
+    //获取元素节点的三种方法，元素ID、标签名、类名
+    //1.getElementByID
+    //alert(typeof document.getElementById("purchases"));
+    //2.getElementByTagName  获取的是一个数组
+    //alert(document.getElementsByTagName("Li").length);
+    //3.getElementByClassName  HTML5新增
+    //alert(document.getElementsByClassName("sale").length);
+
+    //获取属性和设置属性
+    //1.获取属性  getAttribute  是一个函数，不属于document对象，不能通过document对象调用，只能通过元素节点调用
+    // var paras = document.getElementsByTagName("p");
+    // for(var i=0; i<paras.length; i++){
+    //     alert(paras[i].getAttribute("title"));
+    // }
+
+    //2.设置属性 steAttribute(attribute value)  同getAttribute 只能用于元素节点
+    var paras = document.getElementsByTagName("p");
+    paras.setAttribute("title","a list of good");
+
+
+</script>
+
+</html>
