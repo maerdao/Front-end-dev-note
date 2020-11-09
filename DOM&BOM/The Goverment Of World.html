@@ -9,22 +9,33 @@
     <h1>Wanted</h1>
     <ul>
         <li>
-            <a href="iamges/luffy.jpg" title="cat caption">monkey D luffy</a>
+            <a href="iamges/luffy.jpg" onclick="showPic(this);return false;" title="cat caption">monkey D luffy</a>
         </li>
         <li>
-            <a href="iamges/roger.jpg" title="the king of priate">glof D roger</a>
+            <a href="iamges/roger.jpg" onclick="showPic(this);return false;" title="the king of priate">glof D roger</a>
         </li>
         <li>
-            <a href="iamges/sanji.jpeg" title="cooker">black foot</a>
+            <a href="iamges/sanji.jpeg" onclick="showPic(this);return false;" title="cooker">black foot</a>
         </li>
         <li>
-            <a href="iamges/zoro.jpg" title="sword">roronoa zoro</a>
+            <a href="iamges/zoro.jpg" onclick="showPic(this);return false;" title="sword">roronoa zoro</a>
         </li>
     </ul>
+    <img id="placeholder" src="iamges/placeholder.png" alt="the priate list">
+    <p id="description">Choose an image.</p>
 </body>
 
 <script>
+    function showPic(whichpic) {
+        var source = whichpic.getAttribute("href");
+        var placeholder = document.getElementById("placeholder");
+        placeholder.setAttribute("src",source);
 
+        var text = whichpic.getAttribute("title");
+        var description = document.getElementById("description");
+        description.firstChild.nodeValue = text;
+
+    }
 </script>
 
 </html>
